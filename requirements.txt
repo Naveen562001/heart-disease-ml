@@ -1,5 +1,5 @@
 streamlit
 joblib
 flask
-scikit-leart
+scikit-learn
 numpy
