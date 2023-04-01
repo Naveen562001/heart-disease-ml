@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../static/app.css">
+    <title>Heart Disease Detection</title>
+</head>
+<body>
+	<div>
+	
+		<h1><span>CARDIOVASCULAR DISEASE PREDICTION</span></h1>
+		<div class="container">
+		<form action="/predict" method="POST">
+		<label>Name:</label>	
+		<input type ="text" name ="name" required><br><br>
+		<label>Email:</label>	
+		<input type ="email" name ="email" required><br><br>
+        <label>Age:(1-100)</label>
+        <input type="number" name="age" required><br><br>
+		
+        <label>Sex:</label>  
+		<select name="sex">
+			<option value="0">Female</option>
+			<option value="1">Male</option>
+		</select><br><br>
+		
+
+        <label>Chest Pain Type:</label>
+		<select name="ChestPainType">
+			<option value="0">Typical Angina</option>
+			<option value="1">Atypical Angina</option>
+			<option value="2">Non-Anginal Pain</option>
+			<option value="3">Asymptomatic</option>
+		</select><br><br>
+		
+        <label>Resting Blood Pressure(diastolic)normal(110-120hg):</label>
+		<input type="number" name="RestingBP" required><br><br>
+		<label>Resting Blood Pressure(systolic)normal (70-80hg):</label>
+		<input type ="number" name="systolic"><br><br>
+		
+		<label>Cholesterol(normal:170-200mg/dl):</label>
+		<input type="number" name="Cholesterol" required><br><br>
+		
+        <label>Fasting Blood Sugar:</label>
+		<select name="FastingBS">
+			<option value="0">between 80 to 120 mg/dl</option>
+			<option value ="2">Less than 80 mg/dl</option>
+			<option value="1">Greater than or equal to 120 mg/dl</option>
+		</select><br><br>
+		
+        <label>Resting Electrocardiographic Results:</label>
+		<select name="RestingECG">
+			<option value="0">Normal</option>
+			<option value="1">ST-T Wave Abnormality</option>
+			<option value="2">Left Ventricular Hypertrophy</option>
+		</select><br><br>
+		 
+		
+        <label>Maximum Heart Rate Achieved(normal:60-100bpm):</label>
+		<input type="number" name="MaxHR" required><br><br>
+		
+		
+        <label>Exercise Induced Angina:</label>
+		<select name="ExerciseAngina">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</select><br><br>
+		
+		
+        <label>ST Depression Induced by Exercise Relative to Rest(1-4):</label>
+		<input type="number" step="1" name="oldpeak" required><br><br>
+		
+        <label>Slope of the Peak Exercise ST Segment:</label>
+		<select name="ST_Slope">
+			<option value="2">Upsloping</option>
+			<option value="1">Flat</option>
+			<option value="0">Downsloping</option>
+		</select><br><br>
+		
+    
+        <button type="submit"><span>Predict</span></button>
+    </form>
+	<div class ="mean">
+		<h3 id ="ds-title">DESCRIPTION</h3>
+            <ul id ="dsc">
+				<li>
+					Typical Angina -  chest pain precipitated by physical exertion or emotional stress
+				</li>
+				<li>atypical angina - back pain or pain that is described as burning, stabbing</li>
+				<li>non anginal pain - heart pain after a reasonable workup has excluded a cardiac cause</li>
+				<li>Asysmtomatic - a transient alteration in myocardial perfusion in the absence of chest pain</li>
+				<li>ST_WAVE abnormality - ST segment abnormality (elevation or depression) is infraction</li>
+				<li>left verticular hypertrophy - thickening of heart wall result in elevation of pressure within the heart</li>
+				<li>upsloping - normal
+				</li>
+				<li>flat,Downsloping - reduced blood flow to heart</li>
+				<li>Excercise induced angina-chest pain due to Excercise</li>
+			</ul>
+	</div>
+
+</div>
+    <div>
+		{% if result %}
+        <p>{{result}}</p>
+        {% endif %}
+    </div>
+	</div>
+</body>
+</html>

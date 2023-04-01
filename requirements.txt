@@ -1,0 +1,5 @@
+streamlit
+joblib
+flask
+scikit-leart
+numpy

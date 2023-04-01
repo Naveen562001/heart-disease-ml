@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/app.css">
+    <title>Result</title>
+</head>
+<body>
+     <div>
+        <div>
+            <h1 id ="h1">PREDICTION</h1>
+            <button class="btn1" id ='mybutton'>Back</button>
+            <script type="text/javascript">
+                document.getElementById("mybutton").onclick = function () {
+                    location.href = "/";
+                };
+            </script>
+        </div>
+      <div class="result">
+
+      <span id="mdl">{{ mod_name }}</span>
+       <span id ="res">{{ result3 }}</span>
+       
+       <p id = 'descr'>{{ desc }}</p>
+       <span id ='score'>{{ con }}</span>
+       <span id ='val'>{{ con1 }}</span>
+       
+    </div>
+    <div class ="image1">
+        <img src ={{img}} alt = "im"/>
+    </div>
+    <div class="redirect">
+        <a href="http://127.0.0.1:5000/predict/download">download report</a>
+    </div>
+    
+    <span id ="warn" style="color:brown">{{diet}}</span>
+    </div>
+</body>
+</html>
